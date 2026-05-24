@@ -1,25 +1,34 @@
 public class sa3 {
-    static void main() {
-        int x = 5;
+
+    public static void main(String[] args) {
+        int x = 4;
         int y = 20;
-        while (x <= y){
+        int ileeven = 0;
+        int wszystkie = 0;
+
+        while (x <= y) {
             x++;
-            if (isEvennumber(x) == false) {
+
+            if (!isEvennumber(x)) {
+                wszystkie++;
                 continue;
             }
-            System.out.println(x);
+            System.out.println("Even number " + x);
+            ileeven++;
+
+            if (ileeven >= 5) {
+                break;
+            }
         }
-
+        System.out.println("Total odd numbers found = " + wszystkie);
+        System.out.println("Total even numbers found = " + ileeven);
     }
-    public static boolean isEvennumber(int number){
-        if (number % 2 == 0){
 
+    public static boolean isEvennumber(int number) {
+        if (number % 2 == 0) {
             return true;
-        }else {
-
+        } else {
             return false;
         }
-
-
     }
 }
